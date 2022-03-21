@@ -42,8 +42,6 @@
             );
         }
         echo json_encode($respuesta);
-        
-
     }
 
     //verificar si funciona 
