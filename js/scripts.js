@@ -31,7 +31,7 @@ function nuevoProyecto(e){
     //Selecionar el ID con el nuevo proyecto 
     let inputNuevoProyecto = document.querySelector('#nuevo-proyecto');
     //al presionar enter crear el proyecto 
-    inputNuevoProyecto.addEventListener('keypress', function(e){
+    inputNuevoProyecto.addEventListener('keypress', function(e){ //keypress se ejecuta cuando se presiona una tecla específica en este caso el enter
         let teclaPresionada = e.key;
 
         if(teclaPresionada == 'Enter'){
@@ -231,7 +231,7 @@ function accionesTareas(e){
             cancelButtonText: 'Cancelar'
           }).then((result) => {
               if (result.value) {
-                let tareaEliminar = e.target.parentElement.parentElement;
+                let tareaEliminar = e.target.parentElement.parentElement;// ir del hijo al padre
 
                 //borrar de la DB   
                 eliminarTareaDB(tareaEliminar);
@@ -313,7 +313,7 @@ function eliminarTareaDB(tarea){
 //Actualiza el avance del proyecto 
 function actualizarProgreso(){
     //Obtener todas las tareas 
-    const tareas = document.querySelectorAll('li.tarea');
+    const tareas = document.querySelectorAll('li.tarea'); //selector -> busca li con clase tarea
     //Obtener las tareas completadas 
     const tareasCompletadas = document.querySelectorAll('i.completo');
 

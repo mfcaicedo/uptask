@@ -13,14 +13,11 @@
     }
 
 ?>
-
 <div class="contenedor">
     <?php 
         include 'includes/templates/sidebar.php';
     ?>
-
     <main class="contenido-principal">
-      
             <?php    
             if(isset($id_proyecto)): ?>
                 <h1>Proyecto actual: 
@@ -42,7 +39,7 @@
                 </form>
         <?php 
             else:
-                echo "<h1> Selecciona un proyecto a la izaquierda </h1>"; 
+                echo "<h1> Selecciona un proyecto a la izquierda </h1>"; 
             endif; ?>
     
         <h2>Listado de tareas:</h2>
@@ -79,7 +76,7 @@
             <h2>Avance del proyecto</h2>
             <div class="barra-avance" id="barra-avance">
                 <div class="porcentaje" id="porcentaje">
-                    
+
                 </div>
             </div>
         </div>

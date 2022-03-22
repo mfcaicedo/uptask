@@ -32,8 +32,6 @@
         </form>
     </div>
 
-    <!-- <script src="js/sweetalert2.all.min.js"></script> -->
-
 <?php 
 
     include 'includes/templates/footer.php';

@@ -13,7 +13,7 @@ function validarRegistro(e){
         password = document.querySelector('#password').value,
         tipo = document.querySelector('#tipo').value;
     
-    if(usuario === '' || password == ''){
+    if(usuario === '' || password === ''){
          //campos incompletos 
         Swal.fire({
             icon: 'error',
@@ -41,7 +41,6 @@ function validarRegistro(e){
             if (this.status === 200) {
                 // console.log(JSON.parse(xhr.responseText));   
                 let respuesta = JSON.parse(xhr.responseText);
-                console.log(respuesta);
                 //mostramos notifiación de correcto 
                 if (respuesta.respuesta === 'correcto') {
                     //si es un nuevo usuario 
@@ -51,6 +50,9 @@ function validarRegistro(e){
                             title: 'Correcto!',
                             text: 'Usuario creado correctamente!'
                         }); 
+                        //Limpiar los campos 
+                        let formulario = document.querySelector('#formulario');
+                        formulario.reset();
                     }else if(respuesta.tipo == 'login'){
                         Swal.fire({
                             icon: 'success',
@@ -71,14 +73,10 @@ function validarRegistro(e){
                         text: 'Hubo un error!'
                     }); 
                 }
-                //limpio los campos 
-
             }
         }
-
         //enviar la petición 
         xhr.send(datos);
-
     }
 
 }
